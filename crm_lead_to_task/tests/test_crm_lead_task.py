@@ -43,7 +43,7 @@ class TestCrmLeadTask(TransactionCase):
         expected_domain = [("lead_id", "=", self.lead.id)]
         self.assertEqual(action["type"], "ir.actions.act_window")
         self.assertEqual(action["res_model"], "project.task")
-        self.assertEqual(action["view_mode"], "tree,form")
+        self.assertEqual(action["view_mode"], "list,form")
         self.assertEqual(action["domain"], expected_domain)
         self.assertEqual(action["context"]["default_search_lead_id"], self.lead.id)
         self.assertEqual(action["name"], _("Tasks from crm lead %s") % self.lead.name)
