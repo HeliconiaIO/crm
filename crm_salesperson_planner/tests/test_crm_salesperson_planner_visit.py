@@ -5,7 +5,7 @@ from datetime import timedelta
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, fields
+from odoo import fields
 from odoo.exceptions import ValidationError
 from odoo.tests import common
 from odoo.tools import mute_logger
@@ -228,7 +228,7 @@ class TestResPartner(common.TransactionCase):
 
         self.assertEqual(action["domain"], [("partner_id", "child_of", partner.id)])
         self.assertEqual(action["res_model"], "crm.salesperson.planner.visit")
-        self.assertIn("tree", action["view_mode"])
+        self.assertIn("list", action["view_mode"])
         self.assertIn("form", action["view_mode"])
         self.assertIn("pivot", action["view_mode"])
 
@@ -260,7 +260,7 @@ class TestCrmSalespersonPlannerVisitTemplate(common.TransactionCase):
                 (0, 0, {"name": "Customer 3"}),
             ]
 
-        error_msg = _("Only one customer is allowed")
+        error_msg = self.env._("Only one customer is allowed")
         self.assertEqual(str(context.exception), error_msg)
 
     def test_action_view_salesperson_planner_visit(self):

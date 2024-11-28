@@ -243,7 +243,7 @@ class TestCrmSalespersonPlannerVisitTemplate(common.TransactionCase):
         create_model = self.env["crm.salesperson.planner.visit.template.create"]
         create_item = create_model.with_context(
             active_id=self.visit_template_base.id
-        ).create({"date_to": "2024-12-13"})
+        ).create({"date_to": "2025-01-13"})
         create_item.create_visits()
         self.assertEqual(self.visit_template_base.state, "done")
         self.assertEqual(len(self.visit_template_base.visit_ids), 2)
@@ -271,7 +271,7 @@ class TestCrmSalespersonPlannerVisitTemplate(common.TransactionCase):
         create_model = self.env["crm.salesperson.planner.visit.template.create"]
         create_item = create_model.with_context(
             active_id=self.visit_template_base.id
-        ).create({"date_to": "2024-12-13"})
+        ).create({"date_to": "2025-01-13"})
         create_item.create_visits()
         self.assertEqual(self.visit_template_base.state, "done")
         self.assertEqual(len(self.visit_template_base.visit_ids), 2)
@@ -300,7 +300,7 @@ class TestCrmSalespersonPlannerVisitTemplate(common.TransactionCase):
         create_model = self.env["crm.salesperson.planner.visit.template.create"]
         create_item = create_model.with_context(
             active_id=self.visit_template_base.id
-        ).create({"date_to": "2024-12-13"})
+        ).create({"date_to": "2025-01-13"})
         create_item.create_visits()
         self.assertEqual(self.visit_template_base.state, "done")
         self.assertEqual(len(self.visit_template_base.visit_ids), 2)
