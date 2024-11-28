@@ -95,10 +95,7 @@ class TestCrmLeadProbability(TransactionCase):
 
     def test_mass_update_no_onchange_stage(self):
         new_stage = self.env["crm.stage"].create(
-            {
-                "name": "No Onchange",
-                "sequence": 10,
-            }
+            {"name": "No Onchange", "sequence": 10}
         )
         self.assertFalse(new_stage.on_change)
         with self.assertRaises(UserError) as context:
